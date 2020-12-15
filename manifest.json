@@ -2,12 +2,21 @@
   "name": "Find Developer Tools",
   "short_name": "Find Developer Tools",
   "description": "Find Developer Tools",
-  "version": "1.0.3",
-  "manifest_version": 4,
-  "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>", "cookies"],
+  "version": "1.0.4",
+  "manifest_version": 2,
+  "permissions": [
+    "cookies",
+    "https://shop.pre.rd-ecom-test.com/",
+    "https://shop.int.rd-ecom-test.com/",
+    "https://shop.rewe.de/",
+    "tabs",
+    "<all_urls>"
+  ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "<all_urls>"
+      ],
       "css": ["style.css"],
       "js": ["script.js"]
     }

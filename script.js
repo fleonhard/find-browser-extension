@@ -32,15 +32,14 @@ function addIncognitoLoader(container) {
 
 function addCookieCleaner(container) {
     container.appendChild(createHeader('Cookies'))
-    container.appendChild(createButton('Clear Cookies', function () {
+    container.appendChild(createButton('Clear Market', function () {
         chrome.tabs.getSelected(null, function (tab) {
             const uri = URI(tab.url)
-            chrome.cookies.getAll({url: uri.origin()}, function (cookies) {
-                for (let i = 0; i < cookies.length; i++) {
-                    chrome.cookies.remove({url: uri.origin() + cookies[i].path, name: cookies[i].name})
-                }
+            chrome.cookies.remove({"url": uri.toString(), "name": "marketsCookie"}, function(deleted_cookie) {
+                console.log("Deleted:")
+                console.log(deleted_cookie)
                 chrome.tabs.reload(tab.id, function () {})
-            })
+            });
         })
     }))
 }
