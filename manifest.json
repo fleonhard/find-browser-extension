@@ -1,10 +1,10 @@
 {
-  "name": "Query Param Toggle",
-  "short_name": "Querytoggle",
-  "description": "Toggle predefined query params",
+  "name": "Find Utils",
+  "short_name": "Find Utils",
+  "description": "Utils for Team Find",
   "version": "0.1",
   "manifest_version": 2,
-  "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
+  "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>", "cookies"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
