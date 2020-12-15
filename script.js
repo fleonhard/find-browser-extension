@@ -39,9 +39,7 @@ function addCookieCleaner(container) {
                 for (let i = 0; i < cookies.length; i++) {
                     chrome.cookies.remove({url: uri.origin() + cookies[i].path, name: cookies[i].name})
                 }
-                chrome.tabs.reload(tab.id, function () {
-                    alert("Reloaded")
-                })
+                chrome.tabs.reload(tab.id, function () {})
             })
         })
     }))
