@@ -1,9 +1,9 @@
 {
-  "name": "Find Utils",
-  "short_name": "Find Utils",
-  "description": "Utils for Team Find",
-  "version": "0.1",
-  "manifest_version": 2,
+  "name": "Find Developer Tools",
+  "short_name": "Find Developer Tools",
+  "description": "Find Developer Tools",
+  "version": "1.0.2",
+  "manifest_version": 3,
   "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>", "cookies"],
   "content_scripts": [
     {

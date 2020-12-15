@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/query-param-toggle-chrome-extension.iml" filepath="$PROJECT_DIR$/.idea/query-param-toggle-chrome-extension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/find-utils.iml" filepath="$PROJECT_DIR$/.idea/find-utils.iml" />
     </modules>
   </component>
 </project>
