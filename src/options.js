@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 const cookieOption = cookieOptions[i]
                 const tr = document.createElement('tr')
 
+                const icTd = document.createElement('td')
+                const ic = document.createElement('span')
+                ic.classList.add('icon')
+                ic.style.backgroundImage = 'url("../res/cookie-icon.svg")'
+                icTd.appendChild(ic)
+
                 const titleTd = document.createElement('td')
                 const titleInput = document.createElement('input')
                 titleInput.value = cookieOption.title;
@@ -30,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     cookieOptions[i].title = titleInput.value
                 });
                 titleTd.appendChild(titleInput)
-                tr.appendChild(titleTd)
 
                 const cookieNameTd = document.createElement('td')
                 const cookieNameInput = document.createElement('input')
@@ -41,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     cookieOptions[i].cookieName = cookieNameInput.value
                 });
                 cookieNameTd.appendChild(cookieNameInput)
-                tr.appendChild(cookieNameTd)
 
                 const deleteTd = document.createElement('td')
                 const deleteBtn = document.createElement('button')
@@ -51,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     refreshCookieOptionInputs()
                 })
                 deleteTd.appendChild(deleteBtn)
-                tr.append(deleteTd)
+
+                tr.append(icTd, titleTd, cookieNameTd, deleteTd)
 
                 tbody.appendChild(tr)
             }
@@ -60,12 +65,18 @@ document.addEventListener('DOMContentLoaded', function () {
         function refreshQueryOptionInputs() {
             queryOptionTable.innerHTML = ''
             const tbody = document.createElement('tbody')
-            tbody.innerHTML = '<tr><th>Title</th><th>Key</th><th>Value</th><th></th></tr>'
+            tbody.innerHTML = '<tr><th></th><th>Title</th><th>Key</th><th>Value</th><th></th></tr>'
             queryOptionTable.appendChild(tbody)
 
             for (let i = 0; i < queryOptions.length; i++) {
                 const queryOption = queryOptions[i]
                 const tr = document.createElement('tr')
+
+                const icTd = document.createElement('td')
+                const ic = document.createElement('span')
+                ic.classList.add('icon')
+                ic.style.backgroundImage = 'url("../res/question-icon.svg")'
+                icTd.appendChild(ic)
 
                 const titleTd = document.createElement('td')
                 const titleInput = document.createElement('input')
@@ -76,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     queryOptions[i].title = titleInput.value
                 });
                 titleTd.appendChild(titleInput)
-                tr.appendChild(titleTd)
 
                 const keyTd = document.createElement('td')
                 const keyInput = document.createElement('input')
@@ -87,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     queryOptions[i].queryKey = keyInput.value
                 });
                 keyTd.appendChild(keyInput)
-                tr.appendChild(keyTd)
 
                 const valueTd = document.createElement('td')
                 const valueInput = document.createElement('input')
@@ -98,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     queryOptions[i].value = valueInput.value
                 });
                 valueTd.appendChild(valueInput)
-                tr.appendChild(valueTd)
 
                 const deleteTd = document.createElement('td')
                 const deleteBtn = document.createElement('button')
@@ -108,7 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     refreshQueryOptionInputs()
                 })
                 deleteTd.appendChild(deleteBtn)
-                tr.append(deleteTd)
+
+                tr.append(icTd, titleTd, keyTd, valueTd, deleteTd)
 
                 tbody.appendChild(tr)
             }
