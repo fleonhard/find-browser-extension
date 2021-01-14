@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     chrome.storage.sync.get(['cookieOptions', 'queryOptions'], function (data) {
-        addQueryOptions(data.queryOptions)
-        addCookieOptions(data.cookieOptions)
-        addIncognitoLoader(data.queryOptions)
+        const queryOptions = data.queryOptions!=null ? data.queryOptions : []
+        const cookieOptions = data.cookieOptions!=null ? data.cookieOptions : []
+        addQueryOptions(queryOptions)
+        addCookieOptions(cookieOptions)
+        addIncognitoLoader(queryOptions)
         addOthers()
     });
 });
