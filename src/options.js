@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const saveBtn = document.getElementById('save-btn')
 
     chrome.storage.sync.get(['cookieOptions', 'queryOptions'], function(result) {
-        const cookieOptions = result.cookieOptions
-        const queryOptions = result.queryOptions
+        const queryOptions = result.queryOptions!=null ? result.queryOptions : []
+        const cookieOptions = result.cookieOptions!=null ? result.cookieOptions : []
 
         function refreshCookieOptionInputs() {
             cookieOptionTable.innerHTML = ''
